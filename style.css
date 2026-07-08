@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #10121a;
+    color: #f0f0f0;
+    font-family: "Courier New", monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 18px 0 6px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    color: #ffd23f;
+    text-shadow: 3px 3px 0 #b3221f, 6px 6px 0 #00000055;
+}
+
+.subtitle {
+    margin: 4px 0 0;
+    color: #9aa0c0;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 12px 40px;
+    width: 100%;
+    max-width: 900px;
+}
+
+#game-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 800 / 450;
+    border: 4px solid #ffd23f;
+    border-radius: 8px;
+    box-shadow: 0 0 0 4px #10121a, 0 0 24px #000a;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #1a2438;
+    image-rendering: pixelated;
+}
+
+#hud {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    pointer-events: none;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.hud-side {
+    width: 38%;
+}
+
+.hud-right {
+    text-align: right;
+}
+
+.name {
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+
+.bar.hp-bar {
+    width: 100%;
+    height: 14px;
+    background: #2a2a2a;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#4be04b, #1a9e1a);
+    transition: width 0.15s ease-out;
+}
+
+.bar-fill.enemy {
+    background: linear-gradient(#ff5c4d, #c21f0e);
+    margin-left: auto;
+}
+
+.hud-right .bar.hp-bar {
+    direction: rtl;
+}
+
+.lives {
+    margin-top: 4px;
+    letter-spacing: 3px;
+}
+
+.stars {
+    padding-top: 2px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: #555;
+    text-align: center;
+    min-width: 20%;
+}
+
+.stars .lit {
+    color: #ffd23f;
+    text-shadow: 0 0 6px #ffd23f;
+}
+
+#howto {
+    width: 100%;
+    max-width: 800px;
+    background: #191d2b;
+    border: 2px solid #333a52;
+    border-radius: 8px;
+    padding: 14px 20px;
+}
+
+#howto h2 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: #ffd23f;
+    letter-spacing: 2px;
+}
+
+#howto ul {
+    margin: 0 0 10px;
+    padding-left: 20px;
+    line-height: 1.7;
+}
+
+#howto p {
+    margin: 0;
+    color: #b7bdd6;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}

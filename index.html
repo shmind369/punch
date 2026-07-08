@@ -3,21 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ページのタイトル</title>
-    <meta name="description" content="ページの説明文（SEO対策）">
-    
-    <!-- 外部CSSファイルの読み込み（必要に応じて有効化してください） -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>PUNCH FIGHTER - パンチファイター</title>
+    <meta name="description" content="レトロなパンチアウト風ボクシングアクションゲーム。相手の予備動作を見切って避け、隙をついてパンチを叩き込め！">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>サイトのタイトルやロゴ</h1>
+        <h1>PUNCH FIGHTER</h1>
+        <p class="subtitle">〜見切って、かわして、打ちのめせ〜</p>
     </header>
 
     <main>
-        <section>
-            <h2>見出し</h2>
-            <p>本文をここに記載します。</p>
+        <section id="game-wrap">
+            <canvas id="game" width="800" height="450"></canvas>
+
+            <div id="hud">
+                <div class="hud-side hud-left">
+                    <div class="name" id="player-name">YOU</div>
+                    <div class="bar hp-bar"><div class="bar-fill" id="player-hp"></div></div>
+                    <div class="lives" id="player-lives"></div>
+                </div>
+                <div class="stars" id="stars"></div>
+                <div class="hud-side hud-right">
+                    <div class="name" id="enemy-name">ENEMY</div>
+                    <div class="bar hp-bar"><div class="bar-fill enemy" id="enemy-hp"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="howto">
+            <h2>操作方法</h2>
+            <ul>
+                <li><b>← / →</b> : 左右によける</li>
+                <li><b>↓</b> : ガード（ボディブローを防ぐ）</li>
+                <li><b>Z</b> : 左パンチ　<b>X</b> : 右パンチ</li>
+                <li><b>Space</b> : スター4個で必殺アッパー</li>
+                <li><b>Enter</b> : 決定・スタート</li>
+            </ul>
+            <p>相手が光ったら攻撃の予兆。左右のフックは同じ方向へよけ、ボディブローはガードで防げ。<br>
+            相手の隙（攻撃後や休み）にパンチを当ててダウンを狙おう。</p>
         </section>
     </main>
+
+    <script src="game.js"></script>
+</body>
+</html>
